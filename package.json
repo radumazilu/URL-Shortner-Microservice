@@ -8,7 +8,7 @@
   },
   "author": "radumazilu",
   "engines": {
-    "node": "^4.4.3"
+    "node": ">=0.10.25"
   },
   "license": "ISC",
   "dependencies": {
