@@ -9,7 +9,7 @@ silent: true
 
 var app = express();
 
-mongo.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/url-shortener', (err, db) => {
+mongo.connect('mongodb://localhost:27017/url-shortener' || process.env.MONGOLAB_URI, (err, db) => {
   if(err) console.error('Failed to connect');
   else console.log('Connected to MongoDB on port 27017');
 
@@ -29,16 +29,3 @@ mongo.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/url-shorten
     console.log('Node.js listening on port ' + port);
   });
 })
-
-/* -- Initial Idea
-
-app.get('/new/https://'+':url', function (req, res) {
-  shorturl(req.params.url, function(result) {
-    res.json({
-      original_url:  'https://' + req.params.url,
-      short_url: result
-    })
-  });
-})
-
-*/
